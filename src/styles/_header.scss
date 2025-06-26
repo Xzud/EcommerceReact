@@ -1,0 +1,116 @@
+@use 'css/variables.scss';
+
+.header {
+    background-color: rgb(255, 255, 255);
+    height: variables.$header-height;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+
+    &>* {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .top {
+        align-items: center;
+        padding: 8px 24px;
+        font-size: small;
+        color: gray;
+
+
+        .right {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+
+            .navigations {
+                display: flex;
+                justify-content: space-between;
+                gap: 12px;
+
+                span {
+                    cursor: pointer;
+                }
+            }
+
+            .auth-options {
+                display: flex;
+                justify-content: space-between;
+                gap: 12px;
+
+                span {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        flex: 1;
+        border-top: 1px solid variables.$boder-color;
+        border-bottom: 1px solid variables.$boder-color;
+
+        align-items: center;
+        padding: 0 32px;
+
+        .left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 24px;
+
+            .logo {
+                font-weight: bold;
+                font-size: 22px;
+                // TODO Remove this for actual logo
+            }
+
+            .search-panel {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1.8px solid variables.$boder-color;
+                border-radius: 12px;
+
+                .filter {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+
+                    padding: 10px;
+
+                    border-right: 1px solid variables.$boder-color;
+                }
+
+                .input-field {
+
+                    display: flex;
+                    align-items: center;
+                    padding: 0 12px;
+                    gap: 12px;
+
+                    input {
+                        border: none;
+                        outline: none;
+                        width: 60rem;
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+
+            //TODO Temporary and should be changed with actual icon
+            span {
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}

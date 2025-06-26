@@ -1,0 +1,74 @@
+@use 'css/variables.scss';
+@use 'css/header.scss';
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Arial', sans-serif;
+}
+
+body {
+    background-color: variables.$background;
+}
+
+
+section {
+    min-height: 80vh;
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+
+.carousel {
+    height: 15rem;
+
+    .first-entry {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 0 32px;
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            span {
+                font-size: 16px;
+                font-weight: 500;
+                color: gray;
+            }
+
+            h1 {
+                font-size: 42px;
+
+                .italic {
+                    color: black;
+                    font-weight: bold;
+                    font-size: 42px;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+.categories {
+    height: 10rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    .category {
+        background-color: variables.$background;
+
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+    }
+}
