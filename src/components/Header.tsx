@@ -13,7 +13,9 @@ function Header() {
             <span>Promo</span>
           </div>
           <div className="auth-options">
+            <hr />
             <span>Sign Up</span>
+            <hr />
             <span>Login</span>
           </div>
         </div>

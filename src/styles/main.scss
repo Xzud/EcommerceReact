@@ -1,4 +1,4 @@
-@use 'css/variables.scss';
+@use 'css/variables.scss' as var;
 @use 'css/header.scss';
 
 * {
@@ -8,7 +8,11 @@
 }
 
 body {
-    background-color: variables.$background;
+    background-color: var.$background;
+}
+
+#root {
+    width: 100%;
 }
 
 
@@ -18,7 +22,6 @@ section {
     max-width: 100rem;
     margin: 0 auto;
 }
-
 
 .carousel {
     height: 15rem;
@@ -53,6 +56,17 @@ section {
                 }
             }
         }
+
+        .right {
+            position: relative;
+            z-index: -1;
+            object-fit: contain;
+
+            img {
+                margin-top: -50px;
+                height: 26rem;
+            }
+        }
     }
 }
 
@@ -65,10 +79,169 @@ section {
     gap: 24px;
 
     .category {
-        background-color: variables.$background;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
 
-        height: 5em;
-        width: 5em;
-        border-radius: 50%;
+
+        img {
+            background-color: var.$background;
+            height: 5em;
+            width: 5em;
+            border-radius: 50%;
+            object-fit: contain;
+            padding: 12px;
+        }
     }
+}
+
+.sale-header {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .flash-sale {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .icon {
+            background-color: black;
+            padding: 8px;
+            border-radius: 999px;
+        }
+
+        .title {
+            font-size: 22px;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            span {
+                font-weight: bold;
+                font-size: 13px;
+
+                &.num {
+                    background-color: var.$sales-color;
+                    color: white;
+                    padding: 5px;
+                    border-radius: 999px;
+                }
+            }
+        }
+    }
+
+    .options {
+        display: flex;
+        gap: 12px;
+        align-items: stretch;
+
+        span {
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 8px;
+        }
+
+        .left {
+            border: 1.5px solid black;
+            padding: 6px 12px;
+        }
+
+        .right {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 6px 24px;
+
+        }
+    }
+}
+
+.sales-items {
+    margin: 52px 0;
+    display: flex;
+    gap: 12px;
+
+    .item {
+        border-radius: 24px;
+        overflow: hidden;
+        height: 20rem;
+        width: 15rem;
+        overflow: hidden;
+        background-color: var.$image-bg;
+
+        img {
+            height: 50%;
+            padding: 12px 0;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .content {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            padding: 12px;
+            gap: 14px;
+
+            .title {
+                font-size: 16px;
+            }
+
+            .prices {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                .price {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                .old-price {
+                    font-size: 14px;
+                    color: var.$sales-color;
+                    text-decoration: line-through;
+
+                }
+            }
+
+        }
+
+        .sales-count {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            .bar {
+                flex: 1;
+                border-radius: 20px;
+                height: 10px;
+                border: 1px solid var.$boder-color;
+                background: var.$background;
+                position: relative;
+
+                .progress {
+                    border-radius: 20px;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    height: 100%;
+                    width: 80%;
+                    background-color: black;
+                }
+            }
+
+            .quota {
+                color: gray;
+                font-size: 14px;
+            }
+        }
+    }
+
 }
